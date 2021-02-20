@@ -1,0 +1,28 @@
+#include<stdio.h>
+
+int count_bits(long int); 
+
+
+int main()
+{
+   long int x;
+   printf("please enter a number :\n");
+   scanf("%ld",&x);
+   printf("%ld has %d bits equal to 1 \n",x, count_bits(x));
+
+   return 0;
+}
+
+
+
+int count_bits(long int x) 
+{
+   int cnt=0;
+   
+   while(x) /*x!=0*/
+   {
+	cnt++;
+	x&=(x-1); /*turn off the rhigt bit that=1 */
+   }
+   return cnt;	
+}
